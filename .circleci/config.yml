@@ -1,0 +1,41 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  test:
+    docker:
+      - image: node:12.10-alpine
+    steps:
+      - checkout
+      - run: 
+          name: install
+          command: npm install
+      - run: 
+          name: run tests
+          command: echo "write some tests"
+  build:
+    docker:
+      - image: circleci/node:12
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: 
+          name: build image
+          command: docker build -t natalieade/portfolio-natalie
+      - run: 
+          name: push
+          command: docker push natalieade/portfolio-natalie
+
+workflows:
+  version: 2
+  release:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
