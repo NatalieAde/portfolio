@@ -28,6 +28,9 @@ jobs:
           name: build image
           command: docker build -t natalieade/portfolio-natalie .
       - run: 
+          name: login
+          command: docker login -u="${username}" -p="${password}"
+      - run: 
           name: push
           command: docker push natalieade/portfolio-natalie
 
