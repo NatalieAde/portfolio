@@ -26,7 +26,7 @@ jobs:
       - setup_remote_docker
       - run: 
           name: build image
-          command: docker build -t natalieade/portfolio-natalie
+          command: docker build -t natalieade/portfolio-natalie .
       - run: 
           name: push
           command: docker push natalieade/portfolio-natalie
