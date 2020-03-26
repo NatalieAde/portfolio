@@ -3,6 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
+import CodeIcon from '@material-ui/icons/Code';
 import StarIcon from '@material-ui/icons/Star';
  
  
@@ -12,6 +13,21 @@ import StarIcon from '@material-ui/icons/Star';
             <div>
             <h1>Experience</h1>
             <VerticalTimeline>
+            <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                    contentArrowStyle={{ borderRight: '7px solid  rgb(233, 30, 99)' }}
+                    date="2019 - present"
+                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                    icon={<CodeIcon />}
+                >
+                    <h3 className="vertical-timeline-element-title">Code First Girls</h3>
+                    <h4 className="vertical-timeline-element-subtitle">AND Digital</h4>
+                    <h5 className="vertical-timeline-element-subtitle">2019 - 2019</h5>
+                    <p>
+                    Volunteer Intructor.
+                    </p>
+                </VerticalTimelineElement>
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
